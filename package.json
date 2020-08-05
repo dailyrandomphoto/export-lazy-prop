@@ -1,0 +1,71 @@
+{
+  "name": "export-lazy-prop",
+  "version": "1.0.0",
+  "description": "Export a lazily evaluated property.",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "prettier --write . && xo",
+    "lint:fix": "prettier --write . && xo --fix",
+    "test": "mocha test/index.js",
+    "test:cov": "nyc npm run test",
+    "test:loop": "while npm test --silent; do :; done",
+    "preinstall": "unlink-self 2>&1 | echo unlink-self"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "export-lazy-prop": "file:.",
+    "mocha": "^8.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "latest",
+    "resnap": "^1.0.1",
+    "unlink-self": "latest",
+    "xo": "latest"
+  },
+  "keywords": [
+    "export",
+    "import",
+    "require",
+    "module",
+    "lazy",
+    "lazily",
+    "property",
+    "properties"
+  ],
+  "files": [
+    "lib/",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=8.6.0"
+  },
+  "author": "dailyrandomphoto <dailyrandomphoto@gmail.com> (https://www.dailyrandomphoto.com/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dailyrandomphoto/export-lazy-prop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dailyrandomphoto/export-lazy-prop/issues"
+  },
+  "homepage": "https://github.com/dailyrandomphoto/export-lazy-prop#readme",
+  "xo": {
+    "space": 2,
+    "prettier": true,
+    "rules": {
+      "promise/prefer-await-to-then": 0,
+      "capitalized-comments": 0
+    },
+    "overrides": [
+      {
+        "files": "test/*.js",
+        "envs": [
+          "node",
+          "mocha"
+        ]
+      }
+    ]
+  }
+}
